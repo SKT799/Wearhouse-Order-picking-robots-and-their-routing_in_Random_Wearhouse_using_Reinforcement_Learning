@@ -17,9 +17,12 @@ numpy
 matplotlib(optional incase you want to see the performance)
 *for running the training and simulation run the code-> main__.py
 *for seeing how our code performas upon changing the parameters run the code-> Performance_test.py (in the code you can change the parameters)
+If you want to know how pygame works then you may watch this- https://youtu.be/AY9MnQ4x3zk?si=i-p6px1lwphqQKj6
 
 # How agents learn to find the best route?
 Reinforcement learning is a method used when we don't have data to teach our model how to perform. Suppose a robot inside a lab is built to climb mountains, now we know every mountain is of different shape and randomness, We can never have data to tacle every random situation like what our robot will do if it slips off from any step? in random envirement(and the truth is our world is filled with randomness) RL is strong and robust tool for making AI systems smart enough to take best decisions. There are so many RL learning algorithms like Q-Learning, DQN, Actor-Critic, Monte-Carlo Methods etc. There is two kind of RL learning. First when we have the model of the envirement(like mine) second we don't have the model for learning.
 RL is goal based learning i.e. if you know the goal and you want to find a path to reach there and you don't have any data the this method is fantastic which learns by trial and error. For any class of outcomes we will reward our agent or punish it according to the action taken and that's how our agent learns.
 
 In my case, in my 2D grid world I am using model based learning. I have used Q-Learning algorith which you may read here how it works- https://www.geeksforgeeks.org/q-learning-in-python/
+Now, in model based RL(here in my grid-world model) I have 3 agents, 3 respective starting points(denoted by home), 3 respective goals, many static obstacles, and many moving obstacles(denoted by humans).
+I will randomly initialize the Q-table with zeroes(later it will be updated with learning steps for deriving optimal policy). 
