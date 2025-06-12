@@ -23,11 +23,11 @@ PURPLE = (160, 32, 240)
 BLACK = (0, 0, 0)
 
 # Load and scale images to fit it in one cell
-robot_img = pygame.image.load('images_envirement/robot.png')
+robot_img = pygame.image.load('robot.png')
 robot_img = pygame.transform.smoothscale(robot_img, (CELL_SIZE, CELL_SIZE)) # smoothscale keeps the image quality high while resizing
-home_img = pygame.image.load('images_envirement/home.png')
+home_img = pygame.image.load('home.png')
 home_img = pygame.transform.smoothscale(home_img, (CELL_SIZE, CELL_SIZE))
-bricks_img = pygame.image.load('images_envirement/bricks.png')
+bricks_img = pygame.image.load('bricks.png')
 bricks_img = pygame.transform.smoothscale(bricks_img, (CELL_SIZE, CELL_SIZE))
 
 # OBSTACLE AND GOAL
@@ -137,7 +137,7 @@ Q3 = train_agent((GRID_SIZE-1, GRID_SIZE-1 ), goal_positions[2], goal_positions[
 print("ALL Training Complete ^_^")
 
 #Random moving obstacles:
-human_img = pygame.image.load('images_envirement/human.png')
+human_img = pygame.image.load('human.png')
 human_img = pygame.transform.smoothscale(human_img, (CELL_SIZE, CELL_SIZE))
 # Initialize moving humans at random positions
 number_of_humans= 70
