@@ -1,0 +1,2 @@
+# Multiagent_routing_in_random_envirement_using_dynamic_policy_adoption
+This repository contains one of my project in RL. It is solution to a random environment where humans walk randomly but robot can know their position in real life if it has a laser. It takes two action before a collision may happen. It either stops or it just can find a safe place and takes an action to move following the max Q value policy.
