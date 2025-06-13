@@ -60,4 +60,11 @@ Airport or hospital delivery bots.
 Hotel smart delivery bots.
 
 # Limitations & Future Work
+1. Currently I am training them sequentially so not efficient.
+2. They are trained independently without any coordination so it is also not efficient so It can be converted to cooperative intelligent system.
 
+# Contributors:
+Solely idealized and developed by me: Satyam Kumar Tripathi, B.Tech and M.tech in CSE and Artificial Intelligence.
+
+# License:
+This project is open for educational and research purposes.
