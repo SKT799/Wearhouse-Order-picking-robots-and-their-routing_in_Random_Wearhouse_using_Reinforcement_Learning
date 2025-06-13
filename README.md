@@ -30,8 +30,8 @@ Robots have 4 option to move: actions(up,down, left, right) upon taking any acti
 
 For taking an action I have used epsilon-greedy method which is nothing but exploration-exploitation dilemma. In my case exploration probability is εpsilon. read here- https://www.geeksforgeeks.org/machine-learning/epsilon-greedy-algorithm-in-reinforcement-learning/
 => Reward: +100 for reaching the goal, -100 for hitting the static obstacles, -100 for hitting other agents's goal and their starting point, -1 per normal step. If I don't reward -1 per normal step my agent might not choose the shortest path.
-=> The Q value is nothing the accumulated reward(or total reward achieved from current state till the goal)
-=> Other parameters for Q-learning: learning rate-alpha α(how fast believing the current new values upon taking an action),  discount factor-gamma γ(how much do you believe on the next state's max Q value)
+=> The Q value is nothing the accumulated reward(or total reward achieved from current state till the goal).
+=> Other parameters for Q-learning: learning rate-alpha α(how fast believing the current new values upon taking an action),  discount factor-gamma γ(how much do you believe on the next state's max Q value).
 
 Now follow epsilon-greedy method, to take actions and update Q values when our agent reaches the goal. One episode is process of taking actions and updating Q-values according to the TD update rule from starting point till goal. 100 episodes means we reached goal for 100 times from restarting and updating the Q values.
 
@@ -42,16 +42,16 @@ I have made a function which utalizes sensor technology(I have assumed I know wh
 Everytime when robot wants to take action it will calculate it's next state using all 4 possible actions in the grid, now using the laser I know in which cell which things are if any one if found vacant, our agent can safely move there and from that new position it will restart it's policy in this dynamic way to reach the goal. Using some probability I can assign my robot these two methods to avoid the collision.
 
 # Result: Please use the 3 performance png files, and the video for visual understanding
-=> As we increse the number of training episodes , accumulated reward increase, after certain very large number of steps like 1000000-steps it get's saturated
-=> As we increase number of random humans keeping the pause probability 0, the total action taken by the robots to reach the goal increases
+=> As we increse the number of training episodes , accumulated reward increase, after certain very large number of steps like 1000000-steps it get's saturated.
+=> As we increase number of random humans keeping the pause probability 0, the total action taken by the robots to reach the goal increases.
 => As we increase the number of training episodes keeping the random humans constant and low, action taken to reach the goal decreases.
 
 The above three results seems to be obvious for an AI system.
 
 # Application Of my software: Real world senarios
-Warehouse robots (like Amazon)
-Airport or hospital delivery bots
-Hotel smart delivery bots
+Warehouse robots (like Amazon).
+Airport or hospital delivery bots.
+Hotel smart delivery bots.
 
 # Limitations & Future Work
 
