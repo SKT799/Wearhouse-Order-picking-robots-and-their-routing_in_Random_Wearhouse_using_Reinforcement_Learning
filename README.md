@@ -25,4 +25,33 @@ RL is goal based learning i.e. if you know the goal and you want to find a path 
 
 In my case, in my 2D grid world I am using model based learning. I have used Q-Learning algorith which you may read here how it works- https://www.geeksforgeeks.org/q-learning-in-python/
 Now, in model based RL(here in my grid-world model) I have 3 agents, 3 respective starting points(denoted by home), 3 respective goals, many static obstacles, and many moving obstacles(denoted by humans).
-I will randomly initialize the Q-table with zeroes(later it will be updated with learning steps for deriving optimal policy). 
+I will randomly initialize the Q-table with zeroes(later it will be updated with learning steps for deriving optimal policy).
+Robots have 4 option to move: actions(up,down, left, right) upon taking any action we will move to the next gridcell. Each robot has it's own Q-table so robots are trained sequentially in my case.
+
+For taking an action I have used epsilon-greedy method which is nothing but exploration-exploitation dilemma. In my case exploration probability is εpsilon. read here- https://www.geeksforgeeks.org/machine-learning/epsilon-greedy-algorithm-in-reinforcement-learning/
+=> Reward: +100 for reaching the goal, -100 for hitting the static obstacles, -100 for hitting other agents's goal and their starting point, -1 per normal step. If I don't reward -1 per normal step my agent might not choose the shortest path.
+=> The Q value is nothing the accumulated reward(or total reward achieved from current state till the goal)
+=> Other parameters for Q-learning: learning rate-alpha α(how fast believing the current new values upon taking an action),  discount factor-gamma γ(how much do you believe on the next state's max Q value)
+
+Now follow epsilon-greedy method, to take actions and update Q values when our agent reaches the goal. One episode is process of taking actions and updating Q-values according to the TD update rule from starting point till goal. 100 episodes means we reached goal for 100 times from restarting and updating the Q values.
+
+# Important: I have neglected randomly initialized humans during traing? Why?
+Because the humans are randomly initialized(i.e. in any run, they can start from any random vacant location on the map) then they start moving randomly so including them during Q-learning has no meaning or contribution even if I will add them then It will make the learning unstable by adding randomeness in the Q-vales. So how I was able to manage not to collide with humans?
+=> by using dynamic policy allocation and randomly pausing the robots from taking action.
+I have made a function which utalizes sensor technology(I have assumed I know where the humans are, practically can be seen using sensor by the robots). So now I know where are the humans, I will sometimes pause the robots for a while to let humans move from it's way and some times I will use the awearness of the positions of the humans.
+Everytime when robot wants to take action it will calculate it's next state using all 4 possible actions in the grid, now using the laser I know in which cell which things are if any one if found vacant, our agent can safely move there and from that new position it will restart it's policy in this dynamic way to reach the goal. Using some probability I can assign my robot these two methods to avoid the collision.
+
+# Result: Please use the 3 performance png files, and the video for visual understanding
+=> As we increse the number of training episodes , accumulated reward increase, after certain very large number of steps like 1000000-steps it get's saturated
+=> As we increase number of random humans keeping the pause probability 0, the total action taken by the robots to reach the goal increases
+=> As we increase the number of training episodes keeping the random humans constant and low, action taken to reach the goal decreases.
+
+The above three results seems to be obvious for an AI system.
+
+# Application Of my software: Real world senarios
+Warehouse robots (like Amazon)
+Airport or hospital delivery bots
+Hotel smart delivery bots
+
+# Limitations & Future Work
+
