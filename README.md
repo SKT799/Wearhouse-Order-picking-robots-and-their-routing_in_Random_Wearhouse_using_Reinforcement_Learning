@@ -43,7 +43,7 @@ For taking an action I have used epsilon-greedy method which is nothing but expl
 
 Now follow epsilon-greedy method, to take actions and update Q values when our agent reaches the goal. One episode is process of taking actions and updating Q-values according to the TD update rule from starting point till goal. 100 episodes means we reached goal for 100 times from restarting and updating the Q values.
 
-# Important: I have neglected randomly initialized humans during traing? Why?
+# Important: I have neglected randomly initialized humans during training? Why?
 Because the humans are randomly initialized(i.e. in any run, they can start from any random vacant location on the map) then they start moving randomly so including them during Q-learning has no meaning or contribution even if I will add them then It will make the learning unstable by adding randomeness in the Q-vales. So how I was able to manage not to collide with humans?
 => by using dynamic policy allocation and randomly pausing the robots from taking action.
 I have made a function which utalizes sensor technology(I have assumed I know where the humans are, practically can be seen using sensor by the robots). So now I know where are the humans, I will sometimes pause the robots for a while to let humans move from it's way and some times I will use the awearness of the positions of the humans.
