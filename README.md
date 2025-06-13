@@ -12,9 +12,13 @@ This project solves a problem using Reinforcement Learning(a popular AI techniqu
 
 # Prerequisites:
 1.python(latest version would be good to go)
+
 2.pygame
+
 3.numpy
+
 4.matplotlib(optional incase you want to see the performance)
+
 *for running the training and simulation run the code-> main__.py
 
 *for seeing how our code performas upon changing the parameters run the code-> Performance_test.py (in the code you can change the parameters)
