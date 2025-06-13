@@ -1,4 +1,4 @@
-# Multiagent Routing In Random Envirement Using Dynamic Policy Adoption #
+# Multiagent Routing In Random Envirement Using Dynamic Policy Of Reinforcement Learning #
 
 This project solves a problem using Reinforcement Learning(a popular AI technique being used in today's very famous bots and tools like ChatGPT, DeepSeek Reasoning Model, Recomendation Systems etc).  My project not only has solution but I have also simulated the solution in a custom pygame envirenment totally created by me. In the envirenment there are 3 robots that start from any location on the map and their goal is to reach to an assigned goal. They learn to navigate a grid-based envirenment with both static and dynamic obstacles. I have named the static obstacles brics(wall) and moving obstacles humans(which start randomly from a vacant cell in the grid and they move randomly). Our The simulation can be viewed in the video format uploaded in the repo. This simulation mimics real world warehouse or service robot working in hotels avoiding any collision and reaching their goals successfully.
 
